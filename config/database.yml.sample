@@ -1,0 +1,21 @@
+default: &default
+  adapter: mysql2
+  encoding: utf8
+  pool: 5
+  username: root
+  password: root
+  socket: /tmp/mysql.sock
+
+development:
+  <<: *default
+  database: kitazawa_development
+
+test:
+  <<: *default
+  database: kitazawa_test
+
+production:
+  <<: *default
+  database: kitazawa_production
+  username: kitazawa
+  password: <%= ENV['KITAZAWA_DATABASE_PASSWORD'] %>
