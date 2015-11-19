@@ -15,9 +15,9 @@ Rails.application.configure do
 
   # Don't care if the mailer can't send.
   if config.respond_to?(:action_mailer)
-  if config.respond_to?(:action_mailer)
+    if config.respond_to?(:action_mailer)
       config.action_mailer.raise_delivery_errors = false
-  end
+    end
   end
 
   # Print deprecation notices to the Rails logger.

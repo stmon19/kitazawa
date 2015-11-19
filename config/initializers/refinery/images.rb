@@ -35,7 +35,7 @@ Refinery::Images.configure do |config|
 
   # Configure Dragonfly
   # config.dragonfly_verify_urls = true
-  config.dragonfly_secret = "54b60716821e3552e33347f6d04554536f4968d64a47429e"
+  config.dragonfly_secret = '54b60716821e3552e33347f6d04554536f4968d64a47429e'
   # config.dragonfly_url_format = "/system/images/:job/:basename.:ext"
   # config.dragonfly_url_host = ""
   # config.datastore_root_path = "/Users/tk/dev/kitazawa/public/system/refinery/images"
@@ -44,5 +44,4 @@ Refinery::Images.configure do |config|
   # The custom_backend setting by default defers to the core setting for this but can be set just for images.
   # config.custom_backend_class = nil
   # config.custom_backend_opts = {}
-
 end

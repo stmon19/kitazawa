@@ -29,5 +29,4 @@ Refinery::Resources.configure do |config|
   # The custom_backend setting by default defers to the core setting for this but can be set just for resources.
   # config.custom_backend_class = nil
   # config.custom_backend_opts = {}
-
 end
