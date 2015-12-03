@@ -1,0 +1,42 @@
+- content_for :body_content_title do
+  = @post.title
+- content_for :body do
+  section
+    h1
+      | Title
+    p
+      =raw @post.title
+  section
+    h1
+      | Image
+    p
+      = image_fu @post.image, nil
+  section
+    h1
+      | Description
+    p
+      =raw @post.description
+  section
+    h1
+      | Event Start At
+    p
+      =raw @post.event_start_at
+  section
+    h1
+      | Event End At
+    p
+      =raw @post.event_end_at
+  section
+    h1
+      | Venue
+    p
+      =raw @post.venue
+- content_for :side_body do
+  aside
+    h2
+      = t('.other')
+    ul#posts
+      - @posts.each do |post|
+        li
+          = link_to post.title, refinery.posts_post_path(post)
+= render '/refinery/content_page'
