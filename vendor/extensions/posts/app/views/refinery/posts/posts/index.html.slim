@@ -1,6 +1,48 @@
-- content_for :body do
-  ul#posts
-    - @posts.each do |post|
-      li
-        = link_to post.title, refinery.posts_post_path(post)
-= render '/refinery/content_page'
+- content_for(:javascripts) { javascript_include_tag('modernizr.custom.js') }
+- content_for(:javascripts) { javascript_include_tag('jquery.fittext.js') }
+- content_for(:javascripts) { javascript_include_tag('boxgrid.js') }
+- content_for(:stylesheets) { stylesheet_link_tag('posts.css') }
+
+ul#rb-grid.rb-grid.clearfix
+  - @posts.each.with_index(1) do |post, index|
+    = content_tag(:li, class: [(index % 2).zero? ? 'margin-left' : 'margin-right', 'margin-top'])
+      .row
+        .col-md-6
+          = image_fu post.image
+        .col-md-6.event_information
+          h3.cramp = post.title
+          .venue.cramp
+            span
+              = post.class.human_attribute_name(:venue)
+            span.separator
+              | :
+            span
+              = post.venue
+          .date-start
+            span
+              = post.class.human_attribute_name(:event_start_at)
+            span.separator
+              | :
+            span
+              = l(post.event_start_at, format: :medium)
+          .date
+            span
+              = post.class.human_attribute_name(:event_end_at)
+            span.separator
+              | :
+            span
+              = l(post.event_end_at, format: :medium)
+
+      .rb-overlay
+        span.rb-close close
+        .rb-week
+          div
+            span.rb-city
+              | Lisbon
+              span.icon-clima-1
+              span
+                | 21°C
+          div
+            span Mon
+            span.icon-clima-1
+            span 19°C
