@@ -1,7 +1,6 @@
 module Refinery
   module Posts
     class PostsController < ::ApplicationController
-
       before_action :find_all_posts
       before_action :find_page
 
@@ -19,16 +18,15 @@ module Refinery
         present(@page)
       end
 
-    protected
+      protected
 
       def find_all_posts
         @posts = Post.order('position ASC')
       end
 
       def find_page
-        @page = ::Refinery::Page.where(:link_url => "/posts").first
+        @page = ::Refinery::Page.where(link_url: '/posts').first
       end
-
     end
   end
 end

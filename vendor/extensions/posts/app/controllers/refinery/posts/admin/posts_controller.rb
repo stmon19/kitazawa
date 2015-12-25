@@ -2,7 +2,6 @@ module Refinery
   module Posts
     module Admin
       class PostsController < ::Refinery::AdminController
-
         crudify :'refinery/posts/post'
 
         private
