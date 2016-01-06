@@ -10,6 +10,10 @@ module Refinery
       # To enable admin searching, add acts_as_indexed on searchable fields, for example:
       #
       #   acts_as_indexed :fields => [:title]
+
+      def horizontal_image?
+        image.width > image.height
+      end
     end
   end
 end
