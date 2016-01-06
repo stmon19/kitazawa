@@ -9,7 +9,6 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
-gem 'turbolinks'
 
 gem 'execjs'
 gem 'refinerycms'
