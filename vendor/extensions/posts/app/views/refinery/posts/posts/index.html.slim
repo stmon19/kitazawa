@@ -8,7 +8,8 @@ ul#rb-grid.rb-grid.clearfix
     = content_tag(:li, class: width_klass_by_image_aspect_retio(post.horizontal_image?))
       .row
         .col-md-12
-          = image_tag post.image.thumbnail.url
+          .thumbnail
+            = image_tag post.image.thumbnail.url
       .event_information
         h3.cramp = post.title
         .venue.cramp
@@ -20,14 +21,18 @@ ul#rb-grid.rb-grid.clearfix
 
       .rb-overlay
         span.rb-close close
-        .rb-week
-          div
-            span.rb-city
-              | Lisbon
-              span.icon-clima-1
-              span
-                | 21°C
-          div
-            span Mon
-            span.icon-clima-1
-            span 19°C
+        .container
+          .row
+            = content_tag(:div, class: [(post.horizontal_image? ? 'col-md-8' : 'col-md-4'), 'col-sm-12', 'rb-image'])
+              = image_tag post.image.thumbnail.url
+
+            = content_tag(:div, class: [(post.horizontal_image? ? 'col-md-4' : 'col-md-8'), 'col-sm-12'])
+              .title = post.title
+              .venue
+                span = post.venue
+              .date
+                span = l(post.event_start_at, format: :medium)
+                span.separator 〜
+                span = l(post.event_end_at, format: :medium)
+              .description
+                span == post.description
