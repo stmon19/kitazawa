@@ -1,38 +1,20 @@
-- content_for(:javascripts) { javascript_include_tag('modernizr.custom.js') }
-- content_for(:javascripts) { javascript_include_tag('jquery.fittext.js') }
-- content_for(:javascripts) { javascript_include_tag('boxgrid.js') }
+- content_for(:javascripts) { javascript_include_tag('jquery.sliderPro.min.js') }
+- content_for(:javascripts) { javascript_include_tag('posts.js') }
+- content_for(:stylesheets) { stylesheet_link_tag('slider-pro.min.css') }
 - content_for(:stylesheets) { stylesheet_link_tag('posts.css') }
 
-ul#rb-grid.rb-grid.clearfix
-  - @posts.each do |post|
-    = content_tag(:li, class: width_klass_by_image_aspect_retio(post.horizontal_image?))
-      .row
-        .col-md-12
-          .thumbnail
-            = image_tag post.image.thumbnail.url
-      .event_information
-        h3.cramp = post.title
-        .venue.cramp
-          span = post.venue
-        .date
-          span = l(post.event_start_at.to_date, format: :simple)
-          span.separator 〜
-          span = l(post.event_end_at.to_date, format: :simple)
-
-      .rb-overlay
-        span.rb-close close
-        .container
-          .row
-            = content_tag(:div, class: [(post.horizontal_image? ? 'col-md-8' : 'col-md-4'), 'col-sm-12', 'rb-image'])
-              = image_tag post.image.thumbnail.url
-
-            = content_tag(:div, class: [(post.horizontal_image? ? 'col-md-4' : 'col-md-8'), 'col-sm-12'])
-              .title = post.title
-              .venue
-                span = post.venue
-              .date
-                span = l(post.event_start_at, format: :medium)
-                span.separator 〜
-                span = l(post.event_end_at, format: :medium)
-              .description
-                span == post.description
+.row
+  .slider-pro#news-slider
+    .sp-slides
+      - @posts.order(id: :asc).each do |post|
+        .sp-slide
+          = image_tag post.image.thumbnail.url, class: 'sp-image'
+          span.sp-layer.title.sp-white.sp-padding.cramp data-horizontal=80 data-vertical=80  data-show-transition='left' data-show-delay=600  = post.title
+          span.sp-layer.venue.sp-white.sp-padding.cramp data-horizontal=80 data-vertical=270 data-show-transition='left' data-show-delay=900  = post.venue
+          span.sp-layer.date.sp-white.sp-padding        data-horizontal=80 data-vertical=350 data-show-transition='left' data-show-delay=1000
+            = l(post.event_start_at.to_date, format: :simple)
+            | 〜
+            = l(post.event_end_at.to_date, format: :simple)
+    .sp-thumbnails
+      - @posts.order(id: :asc).each do |post|
+        = image_tag post.image.thumbnail.url, class: 'sp-thumbnail'
