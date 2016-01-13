@@ -5,8 +5,12 @@
 }
 
 .slider-pro {
-  .sp-slide {
+  .sp-image:hover {
+    opacity: .7;
+  }
 
+  .sp-slide {
+    background: #000;
     .title {
       font-size: 2em;
       max-width: 940px;

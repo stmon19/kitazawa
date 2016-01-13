@@ -1,4 +1,15 @@
-.container
-  p
-    = t('.copyright', year: Time.now.year, site_name: Refinery::Core.site_name)
+.footer-area.text-muted
+  .nav.navbar.navbar-light.bg-faded.container
+    .row
+      .col-md-12.col-sm-12
+        = link_to '北澤 龍', refinery.root_path, class: 'navbar-brand'
+    .row
+      .col-md-12.col-sm-12
+        ul.nav.navbar-nav
+          = navigation_tag('HOME', refinery.root_path)
+          = navigation_tag('NEWS', refinery.posts_posts_path)
+  .container
+    .row
+      .col-md-12.col-sm-12
+        = t('.copyright', year: Time.now.year, site_name: Refinery::Core.site_name)
 
