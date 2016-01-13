@@ -204,4 +204,5 @@ en:
       long: "%B %d, %Y %H:%M"
       short: "%d %b %H:%M"
       medium: "%Y年%m月%d日(%a) %H:%M"
+      time_only: "%H:%M"
     pm: pm

@@ -4,17 +4,19 @@
 - content_for(:stylesheets) { stylesheet_link_tag('posts.css') }
 
 .row
-  .slider-pro#news-slider
-    .sp-slides
-      - @posts.order(id: :asc).each do |post|
-        .sp-slide
-          = image_tag post.image.thumbnail.url, class: 'sp-image'
-          span.sp-layer.title.sp-white.sp-padding.cramp data-horizontal=80 data-vertical=80  data-show-transition='left' data-show-delay=600  = post.title
-          span.sp-layer.venue.sp-white.sp-padding.cramp data-horizontal=80 data-vertical=270 data-show-transition='left' data-show-delay=900  = post.venue
-          span.sp-layer.date.sp-white.sp-padding        data-horizontal=80 data-vertical=350 data-show-transition='left' data-show-delay=1000
-            = l(post.event_start_at.to_date, format: :simple)
-            | 〜
-            = l(post.event_end_at.to_date, format: :simple)
-    .sp-thumbnails
-      - @posts.order(id: :asc).each do |post|
-        = image_tag post.image.thumbnail.url, class: 'sp-thumbnail'
+  .col-md-12.col-sm-12
+    .slider-pro#news-slider
+      .sp-slides
+        - @posts.each do |post|
+          .sp-slide
+            = link_to refinery.posts_post_path(post) do
+              = image_tag post.image.thumbnail.url, class: 'sp-image'
+            span.sp-layer.title.sp-white.sp-padding.cramp data-horizontal=80 data-vertical=80  data-show-transition='left' data-show-delay=600  = post.title
+            span.sp-layer.venue.sp-white.sp-padding.cramp data-horizontal=80 data-vertical=270 data-show-transition='left' data-show-delay=900  = post.venue
+            span.sp-layer.date.sp-white.sp-padding        data-horizontal=80 data-vertical=350 data-show-transition='left' data-show-delay=1000
+              = l(post.event_start_at.to_date, format: :simple)
+              | 〜
+              = l(post.event_end_at.to_date, format: :simple)
+      .sp-thumbnails
+        - @posts.each do |post|
+          = image_tag post.image.thumbnail.url, class: 'sp-thumbnail'
