@@ -1,33 +1,22 @@
-- content_for(:javascripts) { javascript_include_tag('modernizr.custom.js') }
-- content_for(:javascripts) { javascript_include_tag('jquery.fittext.js') }
-- content_for(:javascripts) { javascript_include_tag('boxgrid.js') }
+- content_for(:javascripts) { javascript_include_tag('jquery.sliderPro.min.js') }
+- content_for(:javascripts) { javascript_include_tag('posts.js') }
+- content_for(:stylesheets) { stylesheet_link_tag('slider-pro.min.css') }
 - content_for(:stylesheets) { stylesheet_link_tag('posts.css') }
 
-ul#rb-grid.rb-grid.clearfix
-  - @posts.each do |post|
-    = content_tag(:li, class: width_klass_by_image_aspect_retio(post.horizontal_image?))
-      .row
-        .col-md-12
-          = image_tag post.image.thumbnail.url
-      .event_information
-        h3.cramp = post.title
-        .venue.cramp
-          span = post.venue
-        .date
-          span = l(post.event_start_at.to_date, format: :simple)
-          span.separator 〜
-          span = l(post.event_end_at.to_date, format: :simple)
-
-      .rb-overlay
-        span.rb-close close
-        .rb-week
-          div
-            span.rb-city
-              | Lisbon
-              span.icon-clima-1
-              span
-                | 21°C
-          div
-            span Mon
-            span.icon-clima-1
-            span 19°C
+.row
+  .col-md-12.col-sm-12
+    .slider-pro#news-slider
+      .sp-slides
+        - @posts.each do |post|
+          .sp-slide
+            = link_to refinery.posts_post_path(post) do
+              = image_tag post.image.thumbnail.url, class: 'sp-image'
+            span.sp-layer.title.sp-white.sp-padding.cramp data-horizontal=80 data-vertical=80  data-show-transition='left' data-show-delay=600  = post.title
+            span.sp-layer.venue.sp-white.sp-padding.cramp data-horizontal=80 data-vertical=270 data-show-transition='left' data-show-delay=900  = post.venue
+            span.sp-layer.date.sp-white.sp-padding        data-horizontal=80 data-vertical=350 data-show-transition='left' data-show-delay=1000
+              = l(post.event_start_at.to_date, format: :simple)
+              | 〜
+              = l(post.event_end_at.to_date, format: :simple)
+      .sp-thumbnails
+        - @posts.each do |post|
+          = image_tag post.image.thumbnail.url, class: 'sp-thumbnail'
