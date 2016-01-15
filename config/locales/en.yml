@@ -36,6 +36,7 @@ en:
       long: "%B %d, %Y"
       short: "%b %d"
       simple: "%Y/%m/%d/(%a)"
+      year_month: "%Y/%m"
     month_names:
     -
     - January
