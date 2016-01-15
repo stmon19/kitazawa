@@ -13,6 +13,7 @@
  *= require refinery/formatting
  *= require refinery/theme
  *= require bootstrap.min
+ *= require header
  *= require footer
  *= require_self
  */
