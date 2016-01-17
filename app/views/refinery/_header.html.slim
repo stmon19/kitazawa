@@ -1,10 +1,9 @@
-nav.navbar.navbar-fixed-top.navbar-light.bg-faded
+nav.navbar.navbar-light.bg-faded
   .container
     = link_to '北澤 龍', refinery.root_path, class: 'navbar-brand'
     button.navbar-toggler.hidden-sm-up data-target="#collapsingNavbar" data-toggle="collapse" type="button"
       | ☰
     #collapsingNavbar.collapse.navbar-toggleable-xs
       ul.nav.navbar-nav
-        = navigation_tag('HOME', refinery.root_path)
         = navigation_tag('NEWS', refinery.posts_posts_path)
         = navigation_tag('WORKS', refinery.works_works_path)

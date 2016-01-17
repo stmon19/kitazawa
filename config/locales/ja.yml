@@ -36,6 +36,7 @@ ja:
       long: "%Y年%m月%d日(%a)"
       short: "%m/%d"
       simple: "%Y/%m/%d/(%a)"
+      year_month: "%Y/%m"
     month_names:
     -
     - 1月
