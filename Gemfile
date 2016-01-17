@@ -9,6 +9,7 @@ gem 'uglifier'
 gem 'coffee-rails'
 gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
+gem 'sprockets-rails', '~> 2.3.3' # for speakingurl-rails is not support Sprockets 3.0.
 
 gem 'execjs'
 gem 'refinerycms'
