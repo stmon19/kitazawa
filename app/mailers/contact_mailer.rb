@@ -5,12 +5,12 @@ class ContactMailer < ApplicationMailer
   #
   #   en.contact_mailer.contact.subject
   #
-  def contact(subject:, message:, from_address:, name:)
+  def contact(subject:, message:, mail_address:, name:)
     @subject      = subject
     @message      = message
-    @from_address = from_address
+    @mail_address = mail_address
     @name         = name
 
-    mail to: Rails.application.secrets.action_mailer[:mail_to.to_s], subject: "[CONTACT from HOMEPAGE] #{@subject}", from: @from_address
+    mail to: Rails.application.secrets.action_mailer[:mail_to.to_s], subject: "[CONTACT from HOMEPAGE] #{@subject}", from: @mail_address
   end
 end

@@ -2,7 +2,7 @@ Refinery::Core::Engine.routes.draw do
 
   # Frontend routes
   namespace :contacts do
-    resources :contacts, :path => '', :only => [:index, :show]
+    resource :contacts, :path => '', :only => [:new, :create]
   end
 
   # Admin routes

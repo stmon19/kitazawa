@@ -4,7 +4,7 @@ module Refinery
       self.table_name = 'refinery_contacts'
 
 
-      validates :name, :presence => true, :uniqueness => true
+      validates_presence_of :name, :mail_address, :message
 
       # To enable admin searching, add acts_as_indexed on searchable fields, for example:
       #
