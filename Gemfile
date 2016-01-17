@@ -38,6 +38,7 @@ group :development do
   gem 'rubocop', require: false
   gem 'bullet'
   gem 'html2slim'
+  gem 'mogok'
 end
 
 group :test do
