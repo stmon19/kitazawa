@@ -17,6 +17,7 @@ gem 'refinerycms-wymeditor'
 gem 'refinerycms-authentication-devise'
 
 gem 'refinerycms-posts', path: 'vendor/extensions'
+gem 'refinerycms-works', path: 'vendor/extensions'
 
 gem 'slim'
 

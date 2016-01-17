@@ -4,6 +4,9 @@ PATH
     refinerycms-posts (1.0)
       acts_as_indexed (~> 0.8.0)
       refinerycms-core (~> 3.0.0)
+    refinerycms-works (1.0)
+      acts_as_indexed (~> 0.8.0)
+      refinerycms-core (~> 3.0.0)
 
 GEM
   remote: https://rubygems.org/
@@ -319,6 +322,7 @@ DEPENDENCIES
   refinerycms-acts-as-indexed
   refinerycms-authentication-devise
   refinerycms-posts!
+  refinerycms-works!
   refinerycms-wymeditor
   rspec-rails
   rubocop
