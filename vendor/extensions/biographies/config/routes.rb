@@ -2,7 +2,7 @@ Refinery::Core::Engine.routes.draw do
 
   # Frontend routes
   namespace :biographies do
-    resources :biographies, :path => '', :only => [:index, :show]
+    resource :biographies, :path => '', :only => [:show]
   end
 
   # Admin routes
