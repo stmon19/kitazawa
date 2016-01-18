@@ -1,7 +1,7 @@
 Refinery::Core::Engine.routes.draw do
   # Frontend routes
   namespace :works do
-    resources :works, path: '', only: [:index, :show]
+    resources :works, path: '', only: [:index]
   end
 
   # Admin routes

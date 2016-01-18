@@ -7,7 +7,7 @@
   .col-md-12.col-sm-12
     .slider-pro#news-slider
       .sp-slides
-        - @posts.each do |post|
+        - @posts.order(created_at: :desc).each do |post|
           .sp-slide
             = link_to refinery.posts_post_path(post) do
               = image_tag post.image.thumbnail.url, class: 'sp-image'
@@ -18,5 +18,5 @@
               | 〜
               = l(post.event_end_at.to_date, format: :simple)
       .sp-thumbnails
-        - @posts.each do |post|
+        - @posts.order(created_at: :desc).each do |post|
           = image_tag post.image.thumbnail.url, class: 'sp-thumbnail'

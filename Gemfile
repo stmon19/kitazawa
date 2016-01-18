@@ -50,3 +50,5 @@ group :test do
   # gem 'fuubar'
 end
 
+
+gem 'refinerycms-contacts', path: 'vendor/extensions'
