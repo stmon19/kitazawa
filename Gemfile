@@ -52,3 +52,4 @@ end
 
 
 gem 'refinerycms-contacts', path: 'vendor/extensions'
+gem 'refinerycms-biographies', path: 'vendor/extensions'
