@@ -32,7 +32,7 @@ ul.rb-grid {
         height: 100%;
         position: absolute;
         top: 0;
-        background: rgba(0, 0, 0, .4);
+        background: rgba(120, 120, 120, .4);
         pointer-events: none;
 
         p {
@@ -46,6 +46,13 @@ ul.rb-grid {
         }
       }
     }
+  }
+}
+
+.blueimp-gallery .slide {
+  background: #f6f6f6;
+  .title {
+    color: #000;
   }
 }
 
