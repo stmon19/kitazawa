@@ -14,7 +14,7 @@
   ol.indicator
 
 ul.rb-grid#links
-  - @works.order(completed_at: :asc).each do |work|
+  - @works.order(completed_at: :desc).each do |work|
     = content_tag(:li, class: work.horizontal_image? ? 'grid2' : 'grid1')
       .row
         .col-md-12
