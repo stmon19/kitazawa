@@ -1,15 +1,15 @@
 source 'https://rubygems.org'
 
-ruby '2.2.2'
+ruby '2.2.3'
 
 gem 'rails', '4.2.5'
-gem 'mysql2'
 gem 'sass-rails'
 gem 'uglifier'
 gem 'coffee-rails'
 gem 'therubyracer', platforms: :ruby
 gem 'jquery-rails'
-gem 'sprockets-rails', '~> 2.3.3' # for speakingurl-rails is not support Sprockets 3.0.
+gem 'sprockets-rails', '~> 2.3.3' # speakingurl not support sprockets-rails 3
+gem 'dragonfly-dropbox_data_store'
 
 gem 'execjs'
 gem 'refinerycms'
@@ -19,14 +19,22 @@ gem 'refinerycms-authentication-devise'
 
 gem 'refinerycms-posts', path: './vendor/extensions'
 gem 'refinerycms-works', path: './vendor/extensions'
+gem 'refinerycms-contacts', path: 'vendor/extensions'
+gem 'refinerycms-biographies', path: 'vendor/extensions'
 
 gem 'slim'
 
+group :production do
+  gem 'pg'
+end
+
 group :development, :test do
+  gem 'mysql2'
   gem 'rspec-rails'
   gem 'factory_girl'
   gem 'pry'
   gem 'pry-doc'
+  gem 'dotenv-rails'
 end
 
 group :development do
@@ -39,7 +47,6 @@ group :development do
   gem 'rubocop', require: false
   gem 'bullet'
   gem 'html2slim'
-  gem 'mogok'
 end
 
 group :test do
@@ -49,7 +56,3 @@ group :test do
   # gem 'faker'
   # gem 'fuubar'
 end
-
-
-gem 'refinerycms-contacts', path: 'vendor/extensions'
-gem 'refinerycms-biographies', path: 'vendor/extensions'

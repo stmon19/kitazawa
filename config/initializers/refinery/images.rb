@@ -1,4 +1,6 @@
 # encoding: utf-8
+require 'dragonfly/dropbox_data_store'
+
 Refinery::Images.configure do |config|
   # Configures the maximum allowed upload size (in bytes) for an image
   # config.max_image_size = 5242880
@@ -42,6 +44,13 @@ Refinery::Images.configure do |config|
 
   # Configure Dragonfly custom storage backend
   # The custom_backend setting by default defers to the core setting for this but can be set just for images.
-  # config.custom_backend_class = nil
-  # config.custom_backend_opts = {}
+  config.custom_backend_class = 'Dragonfly::DropboxDataStore'
+  config.custom_backend_opts = {
+    app_key:              ENV['DROPBOX_APP_KEY'],
+    app_secret:           ENV['DROPBOX_APP_SECRET'],
+    access_token:         ENV['DROPBOX_ACCESS_TOKEN'],
+    access_token_secret:  ENV['DROPBOX_ACCESS_TOKEN_SECRET'],
+    user_id:              ENV['DROPBOX_USER_ID'],
+    root_path:            Rails.env
+  }
 end
