@@ -22,6 +22,7 @@ gem 'refinerycms-works', path: './vendor/extensions'
 gem 'refinerycms-contacts', path: 'vendor/extensions'
 gem 'refinerycms-biographies', path: 'vendor/extensions'
 
+gem 'thin'
 gem 'slim'
 gem 'dotenv-rails'
 
@@ -36,7 +37,6 @@ group :development do
   gem 'spring'
   gem 'spring-commands-rspec'
   gem 'quiet_assets'
-  gem 'thin'
   gem 'better_errors'
   gem 'binding_of_caller'
   gem 'rubocop', require: false
