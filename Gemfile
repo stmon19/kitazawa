@@ -1,6 +1,6 @@
 source 'https://rubygems.org'
 
-ruby '2.2.2'
+ruby '2.2.3'
 
 gem 'rails', '4.2.5'
 gem 'mysql2'
@@ -19,6 +19,8 @@ gem 'refinerycms-authentication-devise'
 
 gem 'refinerycms-posts', path: './vendor/extensions'
 gem 'refinerycms-works', path: './vendor/extensions'
+gem 'refinerycms-contacts', path: 'vendor/extensions'
+gem 'refinerycms-biographies', path: 'vendor/extensions'
 
 gem 'slim'
 
@@ -39,7 +41,6 @@ group :development do
   gem 'rubocop', require: false
   gem 'bullet'
   gem 'html2slim'
-  gem 'mogok'
 end
 
 group :test do
@@ -49,7 +50,3 @@ group :test do
   # gem 'faker'
   # gem 'fuubar'
 end
-
-
-gem 'refinerycms-contacts', path: 'vendor/extensions'
-gem 'refinerycms-biographies', path: 'vendor/extensions'
