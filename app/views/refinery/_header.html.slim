@@ -1,6 +1,8 @@
 nav.navbar.navbar-light.bg-faded
   .container
-    = link_to '北澤 龍', refinery.root_path, class: 'navbar-brand'
+    = link_to refinery.root_path, class: 'navbar-brand' do
+      = image_tag('logo.png', alt: '北澤 龍', height: 30, class: ['pull-left'])
+      | 北澤 龍
     button.navbar-toggler.hidden-sm-up data-target="#collapsingNavbar" data-toggle="collapse" type="button"
       | ☰
     #collapsingNavbar.collapse.navbar-toggleable-xs
