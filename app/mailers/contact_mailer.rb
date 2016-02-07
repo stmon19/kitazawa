@@ -11,6 +11,6 @@ class ContactMailer < ApplicationMailer
     @mail_address = mail_address
     @name         = name
 
-    mail to: Rails.application.secrets.action_mailer[:mail_to.to_s], subject: "[CONTACT from HOMEPAGE] #{@subject}", from: @mail_address
+    mail to: ENV['MAIL_TO'], subject: "[CONTACT from HOMEPAGE] #{@subject}", from: @mail_address
   end
 end

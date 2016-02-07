@@ -26,8 +26,8 @@ Rails.application.configure do
     port: '587',
     domain: 'localhost:3000',
     authentication: 'plain',
-    user_name: Rails.application.secrets.action_mailer[:user_name.to_s],
-    password: Rails.application.secrets.action_mailer[:password.to_s]
+    user_name: ENV['MAIL_USER_NAME'],
+    password: ENV['MAIL_PASSWORD']
   }
 
   # Print deprecation notices to the Rails logger.

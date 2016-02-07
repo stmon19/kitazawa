@@ -23,6 +23,7 @@ gem 'refinerycms-contacts', path: 'vendor/extensions'
 gem 'refinerycms-biographies', path: 'vendor/extensions'
 
 gem 'slim'
+gem 'dotenv-rails'
 
 group :development, :test do
   gem 'rspec-rails'
