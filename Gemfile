@@ -26,6 +26,10 @@ gem 'thin'
 gem 'slim'
 gem 'dotenv-rails'
 
+group :production do
+  gem 'passenger'
+end
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'factory_girl'
