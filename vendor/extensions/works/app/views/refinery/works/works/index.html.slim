@@ -20,9 +20,9 @@ ul.rb-grid#links
         .col-md-12
           .work-container
             .thumbnail
-              = link_to image_tag(work.image.thumbnail.url), work.image.thumbnail.url, data: {gallery: ''}, title: "#{work.title}　#{work.material}　#{work.size}"
+              = link_to image_tag(work.image.try(:thumbnail).try(:url)), work.image.try(:thumbnail).try(:url), data: {gallery: ''}, title: "#{work.title}　#{work.material}　#{work.size}"
             .information
               p.title              = work.title
               p.small.material     = work.material
               p.small.size         = work.size
-              p.small.completed_at = l(work.completed_at.to_date, format: :year_month)
+              p.small.completed_at = l(work.completed_at.try(:to_date), format: :year_month)

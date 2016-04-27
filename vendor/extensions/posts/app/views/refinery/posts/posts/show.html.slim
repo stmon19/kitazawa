@@ -20,7 +20,7 @@
 .row
   .col-md-12.col-sm-12.text-center
     .main-image
-      = image_tag @post.image.url, class: ['img-responsive', 'img-rounded', 'center-block']
+      = image_tag @post.image.try(:url), class: ['img-responsive', 'img-rounded', 'center-block']
 
 .row
   .col-md-12.col-sm-12

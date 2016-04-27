@@ -1,8 +1,9 @@
 - content_for(:stylesheets) { stylesheet_link_tag('biographies.css') }
 
-section.row.eyecatch
-  .col-md-12.col-sm-12
-    = image_tag @biography.image.thumbnail.url, width: '100%'
+- if @biography.image.present?
+	section.row.eyecatch
+	  .col-md-12.col-sm-12
+	    = image_tag @biography.image.thumbnail.url, width: '100%'
 
 section.row.content
   .col-md-12.col-sm-12

@@ -8,7 +8,7 @@
       .sp-slides
         - @works.each do |work|
           .sp-slide
-            = image_tag work.image.thumbnail.url, class: 'sp-image'
+            = image_tag work.image.try(:thumbnail).try(:url), class: 'sp-image'
 
 
 .row
